@@ -1,0 +1,33 @@
+<style>
+* {
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+}
+
+body {
+	width: 100vw;
+	height: 100vh;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	background: #282828;
+	font-family: sans-serif;
+}
+
+#text {
+	color: white;
+	font-size: 32pt;
+}
+</style>
+<body>
+	<h1 id="text">Add the url parameter text</h1>
+</body>
+<script>
+	const params = new URLSearchParams(window.location.search);
+	if (params.has("text")) {
+		document.querySelector("#text").innerHTML = params.get("text");
+	}
+</script>
